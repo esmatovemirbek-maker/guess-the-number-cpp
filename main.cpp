@@ -1,10 +1,18 @@
 #include <iostream>
 #include <random>
 
+int wins = 0;
 void playGame();
 
 int main() {
-    playGame();
+    char choice;
+    do{
+        playGame();
+        std::cout<< "Play again?(y/n): \n";
+        std::cin>> choice;
+
+    }while(choice == 'Y' || choice == 'y');
+    std::cout<<"Total wins: "<< wins;
     return 0;
 }
 
@@ -38,4 +46,5 @@ void playGame() {
     }
 
     std::cout << "You win in " << attempts << " attempts!\n";
+    wins++;
 }
